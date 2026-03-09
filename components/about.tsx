@@ -9,7 +9,7 @@ export default function AboutSection() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="about" ref={ref} className="scroll-mt-24 relative overflow-hidden pt-10 md:pt-20 pb-4 md:pb-8 bg-[#000000]">
+        <section id="about" ref={ref} className="scroll-mt-16 relative overflow-hidden pt-6 md:pt-20 pb-4 md:pb-8 bg-[#000000]">
             <div className="mx-auto flex justify-center w-full px-6">
 
                 <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[1184px] gap-12 md:gap-[51px]">

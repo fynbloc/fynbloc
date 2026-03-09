@@ -9,7 +9,7 @@ export default function SolutionsSection() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="services" ref={ref} className="scroll-mt-24 relative overflow-hidden pt-4 md:pt-10 pb-10 md:pb-24 bg-[#000000]">
+        <section id="services" ref={ref} className="scroll-mt-16 relative overflow-hidden pt-4 md:pt-10 pb-8 md:pb-24 bg-[#000000]">
             <div className="mx-auto flex flex-col items-center w-full max-w-[1240px] px-6">
 
                 {/* Header */}
@@ -20,7 +20,7 @@ export default function SolutionsSection() {
                         </span>
                     </div>
 
-                    <h2 className="mb-6 text-[36px] font-medium leading-[1.1] tracking-tight text-white md:text-[48px]">
+                    <h2 className="mb-6 text-[30px] font-medium leading-[1.1] tracking-tight text-white md:text-[48px]">
                         Infrastructure, Platforms & Compliance<br className="hidden md:block" />Solutions for the Digital Asset Economy
                     </h2>
                     <p className="max-w-[640px] text-[15px] leading-[1.6] text-[#A0A0A0]">

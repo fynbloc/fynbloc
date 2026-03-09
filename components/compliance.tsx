@@ -10,7 +10,7 @@ export default function ComplianceSection() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="technology" ref={ref} className="scroll-mt-24 relative pt-10 md:pt-20 pb-0 bg-[#000000] text-white overflow-hidden">
+        <section id="technology" ref={ref} className="scroll-mt-16 relative pt-6 md:pt-20 pb-0 bg-[#000000] text-white overflow-hidden">
             <div className="mx-auto flex flex-col items-center w-full max-w-[1360px] px-6">
 
                 {/* 1. TRUST & PROTECTION Box */}

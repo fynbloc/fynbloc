@@ -10,7 +10,7 @@ export default function ContactSection() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="contact" ref={ref} className="scroll-mt-24 relative overflow-hidden py-10 md:py-16 bg-[#000000]">
+        <section id="contact" ref={ref} className="scroll-mt-16 relative overflow-hidden py-8 md:py-16 bg-[#000000]">
             {/* Background Pattern */}
             <div className="absolute inset-0 z-0 opacity-40">
                 <Image src="/images/div.hero-background-pattern.png" alt="Background pattern" layout="fill" className="object-cover" />
@@ -25,7 +25,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col justify-center w-full md:w-[450px] shrink-0"
                 >
-                    <h2 className="mb-4 text-[40px] font-semibold leading-[1.1] tracking-tight text-white md:text-[46px] lg:text-[52px]">
+                    <h2 className="mb-4 text-[32px] md:text-[40px] font-semibold leading-[1.1] tracking-tight text-white lg:text-[52px]">
                         We would be<br />
                         happy to hear<br />
                         from you
@@ -79,40 +79,40 @@ export default function ContactSection() {
                     className="flex-1 w-full max-w-[600px]"
                 >
                     <div className="rounded-[24px] bg-[#0A0A0B] border border-[#222222] p-6 lg:p-8 h-full flex flex-col justify-center">
-                        <form className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-[11px] font-medium text-[#D0D0D0]">First Name</label>
-                                    <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-2.5 text-[12px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="First Name" />
+                        <form className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div className="space-y-3">
+                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">First Name</label>
+                                    <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="First Name" />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-[11px] font-medium text-[#D0D0D0]">Last Name</label>
-                                    <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-2.5 text-[12px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Last Name" />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-[11px] font-medium text-[#D0D0D0]">Email</label>
-                                    <input type="email" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-2.5 text-[12px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter Your Email" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-[11px] font-medium text-[#D0D0D0]">Phone Number</label>
-                                    <input type="tel" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-2.5 text-[12px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter your number..." />
+                                <div className="space-y-3">
+                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Last Name</label>
+                                    <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Last Name" />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-[11px] font-medium text-[#D0D0D0]">Subject</label>
-                                <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-2.5 text-[12px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter your subject..." />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div className="space-y-3">
+                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Email</label>
+                                    <input type="email" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter Your Email" />
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Phone Number</label>
+                                    <input type="tel" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter your number..." />
+                                </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-[11px] font-medium text-[#D0D0D0]">Message</label>
-                                <textarea rows={4} className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-2.5 text-[12px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors resize-none" placeholder="Enter your Message..." />
+                            <div className="space-y-3">
+                                <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Subject</label>
+                                <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter your subject..." />
                             </div>
 
-                            <div className="pt-2 flex justify-center">
+                            <div className="space-y-3">
+                                <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Message</label>
+                                <textarea rows={4} className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors resize-none" placeholder="Enter your Message..." />
+                            </div>
+
+                            <div className="pt-4 flex justify-center mt-2">
                                 <button type="button" className="rounded-full bg-transparent border border-[#333333] px-8 py-2.5 text-[12px] font-medium text-[#FF835D] transition-colors hover:bg-[#111111]">
                                     Send Message
                                 </button>

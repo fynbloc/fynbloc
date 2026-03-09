@@ -26,17 +26,15 @@ export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section className="relative flex flex-col items-center justify-start pt-[140px] pb-10 min-h-screen overflow-hidden bg-[#000000]">
+    <section className="relative flex flex-col items-center justify-start pt-20 md:pt-[160px] pb-6 md:pb-10 min-h-0 md:min-h-screen overflow-hidden bg-[#000000]">
       {/* Background patterned grid */}
       <div className="absolute inset-0 z-0 flex justify-center w-full h-full pointer-events-none">
         <Image
           src="/images/div.hero-background-pattern.png"
           alt="Hero Background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top center"
+          fill
+          className="object-cover object-top opacity-100 mix-blend-screen"
           priority
-          className="opacity-100 mix-blend-screen"
         />
       </div>
 
@@ -62,17 +60,17 @@ export default function Hero() {
         {/* Heading */}
         <motion.h1
           variants={item}
-          className="text-balance text-[56px] font-bold leading-[1.1] tracking-tight text-white sm:text-[64px] pb-4"
+          className="text-balance text-[36px] sm:text-[52px] md:text-[64px] font-bold leading-[1.1] tracking-tight text-white pb-4"
         >
-          Building Secure Infrastructure for the<br />Digital Asset Ecosystem
+          Building Secure Infrastructure for the <br className="hidden sm:block" />Digital Asset Ecosystem
         </motion.h1>
 
         {/* Subheading */}
         <motion.p
           variants={item}
-          className="mx-auto mt-2 max-w-[760px] text-[15px] leading-[1.6] text-[#A0A0A0]"
+          className="mx-auto mt-2 max-w-[760px] text-[14px] md:text-[15px] leading-[1.6] text-[#A0A0A0]"
         >
-          Fynbloc Labs is a Virtual Digital Asset (VDA) technology company focused on developing<br />secure wallet infrastructure, custodial systems, and compliant digital asset platforms.
+          Fynbloc Labs is a Virtual Digital Asset (VDA) technology company focused on developing <br className="hidden md:block" />secure wallet infrastructure, custodial systems, and compliant digital asset platforms.
         </motion.p>
 
         {/* CTA Button */}
