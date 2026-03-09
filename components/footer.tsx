@@ -3,38 +3,61 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <footer ref={ref} className="relative py-16">
-      {/* Divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-2/3 bg-gradient-to-r from-transparent via-border to-transparent" />
-
+    <footer ref={ref} className="relative py-8 md:py-12 bg-[#000000]">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mx-auto max-w-6xl px-6 text-center"
+        className="mx-auto max-w-[1440px] px-6 lg:px-20"
       >
-        <div className="flex items-center justify-center gap-3">
-          <Image
-            src="/images/logo.svg"
-            alt="Fynbloc logo"
-            width={28}
-            height={28}
-            style={{ width: "auto", height: "auto" }}
-            className="object-contain"
-          />
+        <div className="flex flex-col md:flex-row justify-between gap-12 border-b border-[#222222] pb-12 w-full">
+
+          <div className="max-w-[450px]">
+            <h4 className="text-white font-semibold mb-3 text-[15px]">About Fynblock</h4>
+            <p className="text-[13px] leading-[1.8] text-[#A0A0A0]">
+              Fynblock is a digital asset platform designed to provide secure cryptocurrency trading, investment solutions, and blockchain-powered financial services. Our platform integrates advanced security, compliance systems, and real-time market infrastructure to deliver a reliable crypto trading experience.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-16 lg:gap-32 w-full md:w-auto h-full justify-start items-start md:mr-20">
+            <div className="flex flex-col gap-6">
+              <h4 className="text-[11px] font-semibold text-[#666666] tracking-wider uppercase mb-2">QUICK LINKS</h4>
+              <Link href="/" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Home</Link>
+              <Link href="/#about" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">About</Link>
+              <Link href="/#services" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Services</Link>
+              <Link href="/#technology" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Technology</Link>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h4 className="text-[11px] font-semibold text-[#666666] tracking-wider uppercase mb-2">LEGAL</h4>
+              <Link href="/compliance" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Compliance</Link>
+              <Link href="/#risk-disclosure" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Risk Disclosure</Link>
+            </div>
+          </div>
+
         </div>
-        <p className="mt-4 text-sm text-muted-foreground/60">
-          Building India&apos;s safe crypto P2P ecosystem.
-        </p>
-        <p className="mt-6 text-xs text-muted-foreground/40">
-          &copy; 2026 Fynbloc. All rights reserved.
-        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-6 w-full">
+          <Link href="/">
+            <Image
+              src="/images/logo.svg"
+              alt="Fynbloc logo"
+              width={120}
+              height={36}
+              className="object-contain"
+            />
+          </Link>
+          <p className="text-[12px] text-[#A0A0A0] font-medium">
+            ©2024 All Rights Reserved by <span className="text-[#FF835D]">Fynblock Labs Pvt. Ltd.</span>
+          </p>
+        </div>
       </motion.div>
     </footer>
   );

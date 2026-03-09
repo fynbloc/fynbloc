@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import EarlyAccessModal from "./early-access-modal";
 
@@ -26,46 +26,17 @@ export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Background gradient orbs */}
-      <div className="pointer-events-none absolute inset-0">
-        <motion.div
-          animate={{
-            x: [0, 30, -20, 0],
-            y: [0, -20, 30, 0],
-            scale: [1, 1.1, 0.95, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -40, 20, 0],
-            y: [0, 30, -30, 0],
-            scale: [1, 0.9, 1.05, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 right-1/4 h-[350px] w-[350px] rounded-full bg-primary/5 blur-[100px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, 20, -30, 0],
-            y: [0, -15, 25, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/3 left-1/4 h-[250px] w-[250px] rounded-full bg-[#FF835D]/8 blur-[80px]"
-        />
-      </div>
-
-      {/* Grid lines background */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(#FF835D 1px, transparent 1px), linear-gradient(90deg, #FF835D 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
+    <section className="relative flex flex-col items-center justify-start pt-[140px] pb-10 min-h-screen overflow-hidden bg-[#000000]">
+      {/* Background patterned grid */}
+      <div className="absolute inset-0 z-0 flex justify-center w-full h-full pointer-events-none">
+        <Image
+          src="/images/div.hero-background-pattern.png"
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top center"
+          priority
+          className="opacity-100 mix-blend-screen"
         />
       </div>
 
@@ -74,74 +45,77 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto max-w-4xl px-6 text-center"
+        className="relative z-10 w-full max-w-[1000px] px-6 text-center flex flex-col items-center mt-10"
       >
-        <motion.div variants={item} className="mb-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-xs font-medium tracking-wide uppercase text-muted-foreground backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            India&apos;s P2P Crypto Infrastructure
-          </span>
+        {/* Top Badge */}
+        <motion.div variants={item} className="mb-8">
+          <div className="mx-auto flex w-fit items-center gap-3 rounded-full border border-white/5 bg-[#1A1A1A]/30 p-1 pr-5 backdrop-blur-sm">
+            <span className="rounded-full bg-[#FF835D] px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">
+              New
+            </span>
+            <span className="text-[12px] font-medium text-white/80">
+              India's Most Secure Crypto Exchange
+            </span>
+          </div>
         </motion.div>
 
+        {/* Heading */}
         <motion.h1
           variants={item}
-          className="text-balance text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+          className="text-balance text-[56px] font-bold leading-[1.1] tracking-tight text-white sm:text-[64px] pb-4"
         >
-          Powering India&apos;s Safe{" "}
-          <span className="bg-gradient-to-r from-primary to-[#FFB088] bg-clip-text text-transparent">
-            Crypto P2P
-          </span>{" "}
-          Ecosystem.
+          Building Secure Infrastructure for the<br />Digital Asset Ecosystem
         </motion.h1>
 
+        {/* Subheading */}
         <motion.p
           variants={item}
-          className="mt-5 text-lg font-medium tracking-wide text-muted-foreground md:text-xl"
+          className="mx-auto mt-2 max-w-[760px] text-[15px] leading-[1.6] text-[#A0A0A0]"
         >
-          Structured. Secure. Transparent.
+          Fynbloc Labs is a Virtual Digital Asset (VDA) technology company focused on developing<br />secure wallet infrastructure, custodial systems, and compliant digital asset platforms.
         </motion.p>
 
-        <motion.p
-          variants={item}
-          className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground/80"
-        >
-          Fynbloc is building a safety-first infrastructure for peer-to-peer
-          crypto trading in India.
-        </motion.p>
-
+        {/* CTA Button */}
         <motion.div
           variants={item}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-10"
         >
-          <button className="group relative rounded-full border border-border bg-transparent px-7 py-3 text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-primary/5">
-            Launching Soon
-          </button>
           <button
             onClick={() => setModalOpen(true)}
-            className="group relative rounded-full bg-primary px-7 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_30px_rgba(255,131,93,0.3)]"
+            className="group relative flex items-center justify-center gap-2 rounded-full border border-[#FF835D] bg-transparent px-8 py-3.5 text-[15px] font-semibold text-[#FF835D] transition-all duration-300 hover:bg-[#FF835D] hover:text-white"
           >
-            <span className="relative z-10">Request Early Access</span>
-            <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+            <span>Request Early Access</span>
+            <Image
+              src="/images/request_access_arrow.svg"
+              alt="Arrow Right"
+              width={16}
+              height={16}
+              className="ml-1 transition-transform group-hover:translate-x-1"
+            />
           </button>
         </motion.div>
-      </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
+        {/* Bottom Badges */}
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
+          variants={item}
+          className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[13px] font-medium text-[#A0A0A0]"
         >
-          <span className="text-xs tracking-widest uppercase text-muted-foreground/50">
-            Scroll
-          </span>
-          <ArrowDown className="h-4 w-4 text-muted-foreground/40" />
+          <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#121215]/50 px-5 py-2.5 backdrop-blur-sm">
+            <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center">
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-200"></span>
+            </div>
+            FIU-IND Compliant
+          </div>
+
+          <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#121215]/50 px-5 py-2.5 backdrop-blur-sm">
+            <Image src="/images/shield_frame.svg" alt="Shield" width={18} height={18} />
+            100% Escrow Secured
+          </div>
+
+          <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#121215]/50 px-5 py-2.5 backdrop-blur-sm">
+            <Image src="/images/india-flag-icon 1.svg" alt="India Flag" width={18} height={18} />
+            Built for India
+          </div>
         </motion.div>
       </motion.div>
 

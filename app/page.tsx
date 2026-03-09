@@ -1,6 +1,9 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
-import Building from "@/components/building";
+import AboutSection from "@/components/about";
+import SolutionsSection from "@/components/solutions";
+import ComplianceSection from "@/components/compliance";
+import ContactSection from "@/components/contact";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -8,7 +11,10 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden bg-background">
       <Navbar />
       <Hero />
-      <Building />
+      <AboutSection />
+      <SolutionsSection />
+      <ComplianceSection />
+      <ContactSection />
       <Footer />
     </main>
   );
