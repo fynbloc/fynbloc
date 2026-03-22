@@ -36,7 +36,7 @@ export default function SolutionsSection() {
                         <div className="w-full md:max-w-[1167px] md:h-[350px] relative flex flex-col md:flex-row items-center rounded-[24px] overflow-hidden bg-[#0A0A0D] md:bg-transparent">
                             {/* Frame 31 Background */}
                             <div className="hidden md:block absolute inset-0 z-0">
-                                <Image src="/images/Frame 31.png" alt="Grid Background" layout="fill" className="object-cover" />
+                                <Image src="/images/Frame 31.png" alt="Grid Background" fill className="object-cover" />
                             </div>
 
                             {/* Left Side: Image Box */}
@@ -48,11 +48,11 @@ export default function SolutionsSection() {
                             >
                                 {/* Dark Box bg graphics.png */}
                                 <div className="absolute inset-0 z-0 hidden md:block">
-                                    <Image src="/images/graphics.png" alt="Dark background" layout="fill" className="object-cover border-r border-[#2b2b2b]/30" />
+                                    <Image src="/images/graphics.png" alt="Dark background" fill className="object-cover border-r border-[#2b2b2b]/30" />
                                 </div>
                                 {/* glowing cube image */}
                                 <div className="relative z-10 w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                    <Image src="/images/div.framer-1rq5fs7-container.png" alt="VDA Infrastructure" layout="fill" className="object-contain" />
+                                    <Image src="/images/div.framer-1rq5fs7-container.png" alt="VDA Infrastructure" fill className="object-contain" />
                                 </div>
                             </motion.div>
 
@@ -128,7 +128,7 @@ export default function SolutionsSection() {
                             >
                                 {/* glowing cube image */}
                                 <div className="relative z-10 w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                    <Image src="/images/div.framer-1rq5fs7-container_mask-group (1).png" alt="Platform Operations" layout="fill" className="object-contain" />
+                                    <Image src="/images/div.framer-1rq5fs7-container_mask-group (1).png" alt="Platform Operations" fill className="object-contain" />
                                 </div>
                             </motion.div>
                         </div>
@@ -145,7 +145,7 @@ export default function SolutionsSection() {
                             >
                                 {/* glowing cube image */}
                                 <div className="relative z-10 w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                    <Image src="/images/div.framer-1rq5fs7-container_mask-group.png" alt="Compliance & IT Services" layout="fill" className="object-contain" />
+                                    <Image src="/images/div.framer-1rq5fs7-container_mask-group.png" alt="Compliance & IT Services" fill className="object-contain" />
                                 </div>
                             </motion.div>
 

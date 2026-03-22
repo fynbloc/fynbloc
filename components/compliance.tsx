@@ -82,7 +82,7 @@ export default function ComplianceSection() {
                             className="w-full md:w-[480px] rounded-[24px] bg-[#0A0A0D] border border-white/5 overflow-hidden flex justify-center items-center h-[350px] md:h-[400px] shrink-0"
                         >
                             <div className="relative w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                <Image src="/images/div.framer-1rq5fs7-container_mask-group.png" layout="fill" objectFit="contain" alt="Security Architecture Padlock" />
+                                <Image src="/images/div.framer-1rq5fs7-container_mask-group.png" fill className="object-contain" alt="Security Architecture Padlock" />
                             </div>
                         </motion.div>
 

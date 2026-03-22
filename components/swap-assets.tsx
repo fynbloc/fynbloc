@@ -12,16 +12,16 @@ export default function SwapAssets() {
   useEffect(() => {
     async function fetchRate() {
       try {
-        const res = await fetch("https://api.wazirx.com/sapi/v1/ticker/24hr?symbol=usdtinr");
+        const res = await fetch("https://open.er-api.com/v6/latest/USD");
         const data = await res.json();
-        if (data && data.lastPrice) {
-          // add +1 to the live API rate
-          setRate(parseFloat(data.lastPrice) + 1.0);
+        if (data && data.rates && data.rates.INR) {
+          // pull strictly standard USD/INR forex rate for lowest buy price
+          setRate(data.rates.INR);
         }
       } catch (err) {
         console.error("Error fetching rate", err);
         // fallback rate
-        setRate(86.45);
+        setRate(93.15);
       }
     }
     fetchRate();

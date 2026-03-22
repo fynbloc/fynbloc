@@ -24,8 +24,8 @@ export default function AboutSection() {
                         <Image
                             src="/images/Main Prompt (Midjourney _ Leonardo _ SDXL)__Ultra realistic 3D render of a modern crypto finance icon, percentage board with bitcoin coin stack, matte black metal body, smooth rounded edges, premium fintech style,  1.png"
                             alt="3D Percentage Render"
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            className="object-cover"
                         />
                     </motion.div>
 

@@ -13,7 +13,7 @@ export default function ContactSection() {
         <section id="contact" ref={ref} className="scroll-mt-16 relative overflow-hidden py-8 md:py-16 bg-[#000000]">
             {/* Background Pattern */}
             <div className="absolute inset-0 z-0 opacity-40">
-                <Image src="/images/div.hero-background-pattern.png" alt="Background pattern" layout="fill" className="object-cover" />
+                <Image src="/images/div.hero-background-pattern.png" alt="Background pattern" fill className="object-cover" />
             </div>
 
             <div className="mx-auto max-w-[1440px] px-6 relative z-10 flex flex-col md:flex-row items-stretch justify-center gap-12 lg:gap-24">
