@@ -12,14 +12,13 @@ export const metadata: Metadata = {
   title: "Fynbloc — Powering India's Safe Crypto P2P Ecosystem",
   description:
     "Fynbloc is building a safety-first infrastructure for peer-to-peer crypto trading in India. Structured. Secure. Transparent.",
-  generator: "v0.app",
   icons: {
     icon: [
-      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon/favicon.png", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon/favicon_white.png", media: "(prefers-color-scheme: dark)" },
     ],
-    apple: "/apple-icon.png",
+    shortcut: "/favicon/favicon.ico",
+    apple: "/favicon/favicon.png",
   },
 };
 
