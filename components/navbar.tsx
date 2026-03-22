@@ -108,7 +108,7 @@ export default function Navbar() {
         {/* Action Buttons (Desktop & Mobile Menu Toggle) */}
         <div className="flex items-center gap-4">
           <Link href="#contact" scroll={true} onClick={closeMenu} className="hidden sm:block">
-            <button className="rounded-full bg-[#FF835D] px-6 py-2 text-[14px] font-medium text-white transition-all duration-300 hover:bg-[#FF835D]/90">
+            <button className="rounded-full bg-[#FF835D] px-6 py-2 text-[14px] font-medium text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-1 active:scale-95 active:translate-y-0 shadow-none">
               Contact
             </button>
           </Link>
@@ -150,7 +150,7 @@ export default function Navbar() {
                 );
               })}
               <Link href="#contact" scroll={true} onClick={closeMenu} className="w-full mt-4">
-                <button className="w-full rounded-full bg-[#FF835D] py-4 text-[16px] font-medium text-white shadow-lg shadow-[#FF835D]/20">
+                <button className="w-full rounded-full bg-[#FF835D] py-4 text-[16px] font-medium text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-1 active:scale-95 active:translate-y-0 shadow-none">
                   Contact Now
                 </button>
               </Link>

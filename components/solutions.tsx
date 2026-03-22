@@ -15,7 +15,7 @@ export default function SolutionsSection() {
                 {/* Header */}
                 <div className="text-center max-w-[929px] mx-auto mb-20 flex flex-col items-center">
                     <div className="mb-6 flex w-fit items-center justify-center rounded-full border border-white/10 bg-[#1A1A1A]/30 px-4 py-1.5 backdrop-blur-sm">
-                        <span className="text-[11px] font-bold tracking-[0.1em] uppercase text-white/50">
+                        <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">
                             CORE SERVICES
                         </span>
                     </div>
@@ -64,7 +64,7 @@ export default function SolutionsSection() {
                                 className="flex-1 relative z-10 p-8 md:p-0 md:pl-[60px] md:pr-10 lg:pl-[80px] flex flex-col items-start w-full"
                             >
                                 <div className="mb-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1 backdrop-blur-sm">
-                                    <span className="text-[11px] font-medium text-[#E0E0E0]">VDA Infrastructure</span>
+                                    <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">VDA Infrastructure</span>
                                 </div>
                                 <h3 className="text-[28px] md:text-[32px] font-medium leading-[1.2] tracking-tight text-[#E0E0E0] mb-6 md:mb-8">
                                     Fynbloc Labs builds infrastructure for Virtual<br className="hidden xl:block" />Digital Assets and crypto services.
@@ -96,7 +96,7 @@ export default function SolutionsSection() {
                                 className="flex-1 relative z-10 flex flex-col items-start w-full"
                             >
                                 <div className="mb-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1">
-                                    <span className="text-[11px] font-medium text-[#E0E0E0]">Platform Operations</span>
+                                    <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">Platform Operations</span>
                                 </div>
                                 <h3 className="text-[28px] md:text-[32px] font-medium leading-[1.2] tracking-tight text-[#E0E0E0] mb-6 md:mb-8">
                                     The Company is engaged in the<br className="hidden xl:block" />design and operation of
@@ -157,7 +157,7 @@ export default function SolutionsSection() {
                                 className="flex-1 relative z-10 flex flex-col items-start w-full"
                             >
                                 <div className="mb-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1">
-                                    <span className="text-[11px] font-medium text-[#E0E0E0]">Compliance & IT Services</span>
+                                    <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">Compliance & IT Services</span>
                                 </div>
                                 <h3 className="text-[28px] md:text-[32px] font-medium leading-[1.2] tracking-tight text-[#E0E0E0] mb-6 md:mb-8">
                                     Fynbloc Labs provides technology<br className="hidden xl:block" />and advisory support in

@@ -179,7 +179,7 @@ export default function ComplianceSection() {
                             "Transactions may involve counterparty risk",
                             "Tax obligations may apply depending on jurisdiction"
                         ].map((item, idx) => (
-                            <div key={idx} className="border border-[#191919] rounded-xl md:rounded-full px-6 py-4 bg-[#050505] flex items-center shadow-sm">
+                            <div key={idx} className="border border-[#191919] rounded-[20px] px-6 py-5 bg-[#050505] flex items-center">
                                 {item}
                             </div>
                         ))}

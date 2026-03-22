@@ -82,22 +82,22 @@ export default function ContactSection() {
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="space-y-3">
-                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">First Name</label>
+                                    <label className="block mb-2 text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">First Name</label>
                                     <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="First Name" />
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Last Name</label>
+                                    <label className="block mb-2 text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Last Name</label>
                                     <input type="text" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Last Name" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="space-y-3">
-                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Email</label>
+                                    <label className="block mb-2 text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Email</label>
                                     <input type="email" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter Your Email" />
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Phone Number</label>
+                                    <label className="block mb-2 text-[12px] md:text-[13px] font-medium text-[#D0D0D0]">Phone Number</label>
                                     <input type="tel" className="w-full rounded-[8px] bg-[#141414] border border-[#222222] px-4 py-3 text-[13px] text-white placeholder-[#555555] focus:border-[#FF835D] focus:outline-none transition-colors" placeholder="Enter your number..." />
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ export default function ContactSection() {
                             </div>
 
                             <div className="pt-4 flex justify-center mt-2">
-                                <button type="button" className="rounded-full bg-transparent border border-[#333333] px-8 py-2.5 text-[12px] font-medium text-[#FF835D] transition-colors hover:bg-[#111111]">
+                                <button type="button" className="rounded-full bg-transparent border border-[#FF835D] px-8 py-2.5 text-[12px] font-medium text-[#FF835D] transition-all duration-300 hover:bg-[#FF835D] hover:text-white hover:-translate-y-1 active:scale-95 active:translate-y-0 shadow-none">
                                     Send Message
                                 </button>
                             </div>
