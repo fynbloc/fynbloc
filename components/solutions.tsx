@@ -1,188 +1,248 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
+import { Code2, Blocks, Lightbulb, ArrowRight, Check } from "lucide-react";
 import { useRef } from "react";
 
+const services = [
+  {
+    icon: Code2,
+    tag: "Development",
+    tagColor: "#FF835D",
+    bgGlow: "rgba(255,131,93,0.06)",
+    borderGlow: "rgba(255,131,93,0.2)",
+    iconBg: "rgba(255,131,93,0.1)",
+    iconBorder: "rgba(255,131,93,0.2)",
+    title: "Custom Software Development",
+    description:
+      "We design and build production-ready web apps, mobile apps, and enterprise software — from zero to launch.",
+    features: [
+      "Web apps (React, Next.js, Node.js)",
+      "Mobile apps (iOS & Android)",
+      "REST & GraphQL API development",
+      "SaaS & enterprise product builds",
+    ],
+  },
+  {
+    icon: Blocks,
+    tag: "Web3 & Blockchain",
+    tagColor: "#818CF8",
+    bgGlow: "rgba(129,140,248,0.06)",
+    borderGlow: "rgba(129,140,248,0.2)",
+    iconBg: "rgba(129,140,248,0.1)",
+    iconBorder: "rgba(129,140,248,0.2)",
+    title: "Blockchain Product Development",
+    description:
+      "End-to-end Web3 engineering — smart contracts, DApps, token platforms, and blockchain integrations for any chain.",
+    features: [
+      "Smart contracts (Solidity, Rust)",
+      "Decentralized apps (DApps)",
+      "NFT & token platforms",
+      "Blockchain integration for existing systems",
+    ],
+  },
+  {
+    icon: Lightbulb,
+    tag: "Consulting",
+    tagColor: "#34D399",
+    bgGlow: "rgba(52,211,153,0.06)",
+    borderGlow: "rgba(52,211,153,0.2)",
+    iconBg: "rgba(52,211,153,0.1)",
+    iconBorder: "rgba(52,211,153,0.2)",
+    title: "IT Consulting & Advisory",
+    description:
+      "Strategic technology guidance for businesses planning their digital future — architecture, cloud, and DevOps.",
+    features: [
+      "Architecture design & review",
+      "Digital transformation strategy",
+      "Cloud planning (AWS, GCP, Azure)",
+      "DevOps & CI/CD pipeline setup",
+    ],
+  },
+];
+
+const capabilities = [
+  "React & Next.js",
+  "Node.js & Python",
+  "Solidity & Rust",
+  "PostgreSQL & MongoDB",
+  "AWS, GCP & Azure",
+  "Docker & Kubernetes",
+  "TypeScript",
+  "React Native",
+  "GraphQL",
+  "Tailwind CSS",
+  "Ethereum & Polygon",
+  "Solana",
+];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] } },
+};
+
 export default function SolutionsSection() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef(null);
+  const capRef = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const capInView = useInView(capRef, { once: true, margin: "-80px" });
 
-    return (
-        <section id="services" ref={ref} className="scroll-mt-16 relative overflow-hidden pt-4 md:pt-10 pb-8 md:pb-24 bg-[#000000]">
-            <div className="mx-auto flex flex-col items-center w-full max-w-[1240px] px-6">
+  return (
+    <section id="services" ref={ref} className="scroll-mt-16 relative overflow-hidden pt-4 md:pt-10 pb-8 md:pb-24 bg-[#000000]">
+      {/* Subtle ambient glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#FF835D]/3 rounded-full blur-[140px]" />
+      </div>
 
-                {/* Header */}
-                <div className="text-center max-w-[929px] mx-auto mb-20 flex flex-col items-center">
-                    <div className="mb-6 flex w-fit items-center justify-center rounded-full border border-white/10 bg-[#1A1A1A]/30 px-4 py-1.5 backdrop-blur-sm">
-                        <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">
-                            CORE SERVICES
-                        </span>
-                    </div>
+      <div className="mx-auto flex flex-col items-center w-full max-w-[1240px] px-6">
 
-                    <h2 className="mb-6 text-[30px] font-medium leading-[1.1] tracking-tight text-white md:text-[48px]">
-                        Software, Blockchain & IT Consulting<br className="hidden md:block" />Services for Modern Businesses
-                    </h2>
-                    <p className="max-w-[640px] text-[15px] leading-[1.6] text-[#A0A0A0]">
-                        Fynbloc Labs builds and delivers end-to-end technology solutions — from custom web and mobile applications to blockchain products and strategic IT advisory.
-                    </p>
-                </div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-[760px] mx-auto mb-16 flex flex-col items-center"
+        >
+          <div className="mb-6 flex w-fit items-center justify-center rounded-full border border-[#FF835D]/20 bg-[#FF835D]/5 px-4 py-1.5 backdrop-blur-sm">
+            <span className="text-[11px] text-[#FF835D] font-bold tracking-[0.15em] uppercase">
+              CORE SERVICES
+            </span>
+          </div>
 
-                {/* Grid Container */}
-                <div className="w-full flex justify-center">
-                    <div className="w-full flex flex-col gap-12 md:gap-[100px] max-w-[1167px]">
+          <h2 className="mb-5 text-[32px] font-bold leading-[1.15] tracking-tight text-white md:text-[48px]">
+            Everything you need to{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF835D] to-[#FFB088]">
+              build & ship
+            </span>
+          </h2>
+          <p className="max-w-[560px] text-[15px] leading-[1.7] text-[#707070]">
+            From custom software to blockchain products — we deliver end-to-end technology solutions that actually work in production.
+          </p>
+        </motion.div>
 
-                        {/* Item 1: Custom Software Development (Image Left, Text Right) */}
-                        <div className="w-full md:max-w-[1167px] md:h-[350px] relative flex flex-col md:flex-row items-center rounded-[24px] overflow-hidden bg-[#0A0A0D] md:bg-transparent">
-                            {/* Frame 31 Background */}
-                            <div className="hidden md:block absolute inset-0 z-0">
-                                <Image src="/images/Frame 31.png" alt="Grid Background" fill className="object-cover" />
-                            </div>
+        {/* Service Cards */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+          className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+        >
+          {services.map((svc) => (
+            <motion.div
+              key={svc.title}
+              variants={cardVariant}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="group relative rounded-[20px] border bg-[#050507] p-8 flex flex-col overflow-hidden cursor-default transition-colors duration-300"
+              style={{
+                borderColor: "rgba(255,255,255,0.07)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = svc.borderGlow;
+                (e.currentTarget as HTMLDivElement).style.background = svc.bgGlow;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)";
+                (e.currentTarget as HTMLDivElement).style.background = "#050507";
+              }}
+            >
+              {/* Corner glow on hover */}
+              <div
+                className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: svc.bgGlow }}
+              />
 
-                            {/* Left Side: Image Box */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -40 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-                                transition={{ duration: 0.8 }}
-                                className="relative w-full md:w-[450px] h-[300px] md:h-[350px] shrink-0 flex items-center justify-center z-10 bg-[#0A0A0D] md:bg-transparent"
-                            >
-                                {/* Dark Box bg graphics.png */}
-                                <div className="absolute inset-0 z-0 hidden md:block">
-                                    <Image src="/images/graphics.png" alt="Dark background" fill className="object-cover border-r border-[#2b2b2b]/30" />
-                                </div>
-                                {/* glowing cube image */}
-                                <div className="relative z-10 w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                    <Image src="/images/div.framer-1rq5fs7-container.png" alt="Software Development" fill className="object-contain" />
-                                </div>
-                            </motion.div>
+              {/* Icon */}
+              <div
+                className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border"
+                style={{ background: svc.iconBg, borderColor: svc.iconBorder }}
+              >
+                <svc.icon className="h-5 w-5" style={{ color: svc.tagColor }} />
+              </div>
 
-                            {/* Right Side: Text */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 40 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="flex-1 relative z-10 p-8 md:p-0 md:pl-[60px] md:pr-10 lg:pl-[80px] flex flex-col items-start w-full"
-                            >
-                                <div className="mb-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1 backdrop-blur-sm">
-                                    <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">Custom Software Development</span>
-                                </div>
-                                <h3 className="text-[28px] md:text-[32px] font-medium leading-[1.2] tracking-tight text-[#E0E0E0] mb-6 md:mb-8">
-                                    We design and develop bespoke<br className="hidden xl:block" />software tailored to your business.
-                                </h3>
-                                <ul className="space-y-3 w-full">
-                                    {[
-                                        "Web application development (React, Next.js, Node.js)",
-                                        "Mobile app development (iOS & Android)",
-                                        "REST & GraphQL API development",
-                                        "Enterprise software and SaaS product development"
-                                    ].map((text, index) => (
-                                        <li key={index} className="flex items-center gap-3 text-[#A0A0A0] text-[14px] tracking-wide">
-                                            <div className="w-[4px] h-[4px] shrink-0 rounded-full bg-[#A0A0A0]"></div>
-                                            {text}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        </div>
+              {/* Tag */}
+              <div
+                className="mb-4 w-fit rounded-full px-3 py-1 text-[10px] font-bold tracking-[0.12em] uppercase"
+                style={{
+                  color: svc.tagColor,
+                  background: svc.iconBg,
+                  border: `1px solid ${svc.iconBorder}`,
+                }}
+              >
+                {svc.tag}
+              </div>
 
-                        {/* Item 2: Blockchain Product Development (Text Left, Image Right) */}
-                        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-[80px] w-full">
+              {/* Title */}
+              <h3 className="text-[20px] font-bold leading-[1.25] tracking-tight text-white mb-3">
+                {svc.title}
+              </h3>
 
-                            {/* Left Side: Text */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -40 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-                                transition={{ duration: 0.8 }}
-                                className="flex-1 relative z-10 flex flex-col items-start w-full"
-                            >
-                                <div className="mb-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1">
-                                    <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">Blockchain Product Development</span>
-                                </div>
-                                <h3 className="text-[28px] md:text-[32px] font-medium leading-[1.2] tracking-tight text-[#E0E0E0] mb-6 md:mb-8">
-                                    End-to-end Web3 and blockchain<br className="hidden xl:block" />product engineering
-                                </h3>
-                                <ul className="space-y-3 mb-6 md:mb-8 w-full">
-                                    {[
-                                        "Smart contract development (Solidity, Rust)",
-                                        "Decentralized application (DApp) development",
-                                        "NFT platforms and token engineering",
-                                        "Blockchain integration for existing systems"
-                                    ].map((text, index) => (
-                                        <li key={index} className="flex items-center gap-3 text-[#A0A0A0] text-[14px] tracking-wide">
-                                            <div className="w-[4px] h-[4px] shrink-0 rounded-full bg-[#A0A0A0]"></div>
-                                            {text}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <p className="text-[12px] text-[#A0A0A0]">
-                                    We build on Ethereum, Polygon, Solana, and other leading chains.
-                                </p>
-                            </motion.div>
+              {/* Description */}
+              <p className="text-[13px] leading-[1.7] text-[#666] mb-6">
+                {svc.description}
+              </p>
 
-                            {/* Right Side: Image Box */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 40 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative w-full md:w-[480px] h-[300px] md:h-[350px] shrink-0 flex items-center justify-center z-10 bg-[#0A0A0A] border border-white/5 rounded-[24px] overflow-hidden"
-                            >
-                                <div className="relative z-10 w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                    <Image src="/images/div.framer-1rq5fs7-container_mask-group (1).png" alt="Blockchain Development" fill className="object-contain" />
-                                </div>
-                            </motion.div>
-                        </div>
+              {/* Features */}
+              <ul className="mt-auto space-y-2.5">
+                {svc.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-[13px] text-[#888]">
+                    <Check
+                      className="h-3.5 w-3.5 mt-0.5 shrink-0"
+                      style={{ color: svc.tagColor }}
+                    />
+                    {f}
+                  </li>
+                ))}
+              </ul>
 
-                        {/* Item 3: IT Consulting & Advisory (Image Left, Text Right) */}
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-[80px] w-full">
+              {/* Bottom CTA */}
+              <div className="mt-8 pt-6 border-t border-white/5">
+                <a
+                  href="#contact"
+                  className="flex items-center gap-2 text-[13px] font-semibold transition-all duration-200"
+                  style={{ color: svc.tagColor }}
+                >
+                  Get a quote
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-                            {/* Left Side: Image Box */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -40 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative w-full md:w-[480px] h-[300px] md:h-[350px] shrink-0 flex items-center justify-center z-10 bg-[#0A0A0A] border border-white/5 rounded-[24px] overflow-hidden"
-                            >
-                                <div className="relative z-10 w-[80%] h-[80%] md:w-[350px] md:h-[300px]">
-                                    <Image src="/images/div.framer-1rq5fs7-container_mask-group.png" alt="IT Consulting" fill className="object-contain" />
-                                </div>
-                            </motion.div>
-
-                            {/* Right Side: Text */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 40 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="flex-1 relative z-10 flex flex-col items-start w-full"
-                            >
-                                <div className="mb-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1">
-                                    <span className="text-[11px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF835D] font-bold tracking-[0.15em] uppercase">IT Consulting & Advisory</span>
-                                </div>
-                                <h3 className="text-[28px] md:text-[32px] font-medium leading-[1.2] tracking-tight text-[#E0E0E0] mb-6 md:mb-8">
-                                    Strategic technology guidance<br className="hidden xl:block" />for your business
-                                </h3>
-                                <ul className="space-y-3 mb-6 md:mb-8 w-full">
-                                    {[
-                                        "Technology architecture design and review",
-                                        "Digital transformation strategy",
-                                        "Cloud infrastructure planning (AWS, GCP, Azure)",
-                                        "DevOps, CI/CD pipeline setup and optimization"
-                                    ].map((text, index) => (
-                                        <li key={index} className="flex items-center gap-3 text-[#A0A0A0] text-[14px] tracking-wide">
-                                            <div className="w-[4px] h-[4px] shrink-0 rounded-full bg-[#A0A0A0]"></div>
-                                            {text}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <p className="text-[12px] text-[#A0A0A0] leading-[1.6]">
-                                    We work as a technology partner — not just a vendor — to help your team<br className="hidden lg:block" />build and grow the right way.
-                                </p>
-                            </motion.div>
-                        </div>
-
-                    </div>
-                </div>
-
+        {/* Tech Capabilities Strip */}
+        <motion.div
+          ref={capRef}
+          initial={{ opacity: 0, y: 24 }}
+          animate={capInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <div className="w-full border border-white/5 rounded-[20px] bg-[#030305] p-8 md:p-10">
+            <p className="text-center text-[11px] font-bold tracking-[0.2em] uppercase text-[#444] mb-7">
+              Technologies we work with
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {capabilities.map((cap, i) => (
+                <motion.div
+                  key={cap}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={capInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ delay: i * 0.04, duration: 0.3 }}
+                  className="rounded-full border border-white/[0.07] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-[#888] hover:border-[#FF835D]/30 hover:text-white hover:bg-[#FF835D]/5 transition-all duration-200 cursor-default"
+                >
+                  {cap}
+                </motion.div>
+              ))}
             </div>
-        </section>
-    );
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
 }

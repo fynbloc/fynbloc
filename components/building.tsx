@@ -58,22 +58,24 @@ export default function Building() {
           >
             <motion.span
               variants={item}
-              className="mb-4 inline-block text-xs font-medium tracking-widest uppercase text-primary"
+              className="mb-4 inline-block text-xs font-semibold tracking-widest uppercase text-[#FF835D]"
             >
               Our Approach
             </motion.span>
 
             <motion.h2
               variants={item}
-              className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
+              className="text-balance text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl lg:text-5xl"
             >
               Building With{" "}
-              <span className="text-primary">Intention</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF835D] to-[#FFB088]">
+                Intention
+              </span>
             </motion.h2>
 
             <motion.p
               variants={item}
-              className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground"
+              className="mt-5 max-w-md text-[15px] leading-[1.7] text-[#707070]"
             >
               Technology shapes how businesses grow.
               <br />
@@ -90,10 +92,10 @@ export default function Building() {
                   variants={item}
                   className="flex items-center gap-4"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary/60">
-                    <feature.icon className="h-4.5 w-4.5 text-primary" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#FF835D]/20 bg-[#FF835D]/10">
+                    <feature.icon className="h-4.5 w-4.5 text-[#FF835D]" />
                   </div>
-                  <span className="text-sm font-medium text-foreground/90">
+                  <span className="text-sm font-medium text-white/80">
                     {feature.label}
                   </span>
                 </motion.li>
@@ -102,11 +104,11 @@ export default function Building() {
 
             <motion.p
               variants={item}
-              className="mt-10 text-sm leading-relaxed text-muted-foreground/70"
+              className="mt-10 text-sm leading-relaxed text-[#555]"
             >
               Great software takes craft.
               <br />
-              <span className="font-semibold text-primary">Fynbloc.</span>
+              <span className="font-semibold text-[#FF835D]">Fynbloc Labs.</span>
             </motion.p>
           </motion.div>
 

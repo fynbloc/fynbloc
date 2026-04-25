@@ -25,13 +25,13 @@ export default function ContactSection() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col justify-center w-full md:w-[450px] shrink-0"
                 >
-                    <h2 className="mb-4 text-[32px] md:text-[40px] font-semibold leading-[1.1] tracking-tight text-white lg:text-[52px]">
-                        We would be<br />
-                        happy to hear<br />
-                        from you
+                    <h2 className="mb-4 text-[32px] md:text-[40px] font-bold leading-[1.1] tracking-tight text-white lg:text-[52px]">
+                        Let's build<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF835D] to-[#FFB088]">something great</span><br />
+                        together
                     </h2>
-                    <p className="mb-6 text-[13px] leading-[1.6] text-[#A0A0A0] max-w-[400px]">
-                        Have a project in mind? Looking for a technology partner? We'd love to hear about what you're building.
+                    <p className="mb-6 text-[13px] leading-[1.7] text-[#707070] max-w-[400px]">
+                        Have a project in mind? Looking for a technology partner? Tell us what you're building — we'd love to help.
                     </p>
 
                     <div className="w-full h-[1px] bg-[#333333] mb-6"></div>
