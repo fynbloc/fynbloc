@@ -20,9 +20,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12 border-b border-[#222222] pb-12 w-full">
 
           <div className="max-w-[450px]">
-            <h4 className="text-white font-semibold mb-3 text-[15px]">About Fynbloc</h4>
+            <h4 className="text-white font-semibold mb-3 text-[15px]">About Fynbloc Labs</h4>
             <p className="text-[13px] leading-[1.8] text-[#A0A0A0]">
-              Fynbloc is a digital asset platform designed to provide secure cryptocurrency trading, investment solutions, and blockchain-powered financial services. Our platform integrates advanced security, compliance systems, and real-time market infrastructure to deliver a reliable crypto trading experience.
+              Fynbloc Labs is an Indian IT services and blockchain product development company. We build custom software, Web3 products, and scalable digital solutions — helping businesses design, develop, and grow with technology.
             </p>
           </div>
 
@@ -37,8 +37,7 @@ export default function Footer() {
 
             <div className="flex flex-col gap-6">
               <h4 className="text-[11px] font-semibold text-[#666666] tracking-wider uppercase mb-2">LEGAL</h4>
-              <Link href="/compliance" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Compliance</Link>
-              <Link href="/#risk-disclosure" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Risk Disclosure</Link>
+              <Link href="/legal" className="text-[13px] text-[#A0A0A0] hover:text-white transition-colors">Privacy & Legal</Link>
             </div>
           </div>
 

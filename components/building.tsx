@@ -1,21 +1,21 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Shield, UserCheck, Scale } from "lucide-react";
+import { Code2, GitBranch, CheckCircle2 } from "lucide-react";
 import { useRef } from "react";
 
 const features = [
   {
-    icon: Shield,
-    label: "Defined escrow logic",
+    icon: Code2,
+    label: "Clean, maintainable codebase",
   },
   {
-    icon: UserCheck,
-    label: "Verified participants",
+    icon: GitBranch,
+    label: "Agile sprints with regular delivery",
   },
   {
-    icon: Scale,
-    label: "Transparent dispute systems",
+    icon: CheckCircle2,
+    label: "Thorough testing and QA",
   },
 ];
 
@@ -75,9 +75,9 @@ export default function Building() {
               variants={item}
               className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground"
             >
-              India&apos;s crypto P2P market is growing.
+              Technology shapes how businesses grow.
               <br />
-              We&apos;re building the structure behind it.
+              We build the products that power that growth.
             </motion.p>
 
             <motion.ul
@@ -104,7 +104,7 @@ export default function Building() {
               variants={item}
               className="mt-10 text-sm leading-relaxed text-muted-foreground/70"
             >
-              Strong systems take time.
+              Great software takes craft.
               <br />
               <span className="font-semibold text-primary">Fynbloc.</span>
             </motion.p>
@@ -128,6 +128,13 @@ export default function Building() {
 }
 
 function GlassCard() {
+  const tasks = [
+    { label: "Requirements & Design", status: "done" },
+    { label: "Development", status: "active" },
+    { label: "QA & Testing", status: "pending" },
+    { label: "Deployment", status: "pending" },
+  ];
+
   return (
     <motion.div
       whileHover={{ rotateY: 3, rotateX: -2, scale: 1.02 }}
@@ -154,66 +161,65 @@ function GlassCard() {
         <div className="relative z-10">
           <div className="mb-6 flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-              <Shield className="h-5 w-5 text-primary" />
+              <Code2 className="h-5 w-5 text-primary" />
             </div>
             <div>
               <p className="text-sm font-semibold text-foreground">
-                Escrow Protocol
+                Sprint Delivery
               </p>
-              <p className="text-xs text-muted-foreground">Active</p>
+              <p className="text-xs text-muted-foreground">In Progress</p>
             </div>
             <div className="ml-auto flex h-6 items-center rounded-full bg-primary/10 px-2.5">
               <span className="text-[10px] font-medium text-primary">
-                Secured
+                Active
               </span>
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/40 p-3">
-              <span className="text-xs text-muted-foreground">Trade ID</span>
+              <span className="text-xs text-muted-foreground">Project ID</span>
               <span className="font-mono text-xs text-foreground/80">
-                #FYN-2026-0841
+                #FYN-2026-0112
               </span>
             </div>
-            <div className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/40 p-3">
-              <span className="text-xs text-muted-foreground">Status</span>
-              <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span className="text-xs font-medium text-emerald-400">
-                  In Escrow
-                </span>
+
+            {tasks.map(({ label, status }) => (
+              <div key={label} className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/40 p-3">
+                <span className="text-xs text-muted-foreground">{label}</span>
+                <div className="flex items-center gap-1.5">
+                  {status === "done" && (
+                    <>
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="text-xs font-medium text-emerald-400">Done</span>
+                    </>
+                  )}
+                  {status === "active" && (
+                    <>
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#FF835D]" />
+                      <span className="text-xs font-medium text-[#FF835D]">In Progress</span>
+                    </>
+                  )}
+                  {status === "pending" && (
+                    <span className="text-xs font-medium text-muted-foreground">Pending</span>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/40 p-3">
-              <span className="text-xs text-muted-foreground">Amount</span>
-              <span className="text-xs font-medium text-foreground/80">
-                0.125 BTC
-              </span>
-            </div>
-            <div className="flex items-center justify-between rounded-lg border border-border/40 bg-secondary/40 p-3">
-              <span className="text-xs text-muted-foreground">Verification</span>
-              <div className="flex items-center gap-1.5">
-                <UserCheck className="h-3 w-3 text-primary" />
-                <span className="text-xs font-medium text-primary">
-                  Both Verified
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Progress bar */}
           <div className="mt-6">
             <div className="mb-1.5 flex items-center justify-between">
               <span className="text-[10px] text-muted-foreground">
-                Trade Progress
+                Sprint Progress
               </span>
-              <span className="text-[10px] font-medium text-primary">75%</span>
+              <span className="text-[10px] font-medium text-primary">50%</span>
             </div>
             <div className="h-1 w-full overflow-hidden rounded-full bg-secondary">
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: "75%" }}
+                whileInView={{ width: "50%" }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
                 className="h-full rounded-full bg-gradient-to-r from-primary to-[#FFB088]"

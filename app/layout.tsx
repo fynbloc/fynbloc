@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fynbloc — Powering India's Safe Crypto P2P Ecosystem",
+  title: "Fynbloc Labs — IT Services & Blockchain Development",
   description:
-    "Fynbloc is building a safety-first infrastructure for peer-to-peer crypto trading in India. Structured. Secure. Transparent.",
+    "Fynbloc Labs is an Indian IT services and blockchain product development company building custom software, Web3 products, and scalable digital solutions.",
   icons: {
     icon: [
       { url: "/favicon/favicon.png", media: "(prefers-color-scheme: light)" },

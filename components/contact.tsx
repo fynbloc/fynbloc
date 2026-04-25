@@ -31,7 +31,7 @@ export default function ContactSection() {
                         from you
                     </h2>
                     <p className="mb-6 text-[13px] leading-[1.6] text-[#A0A0A0] max-w-[400px]">
-                        With Secure, Transparent, and Decentralized Solutions for the Future of the Internet, you'll experience the Future of the Internet
+                        Have a project in mind? Looking for a technology partner? We'd love to hear about what you're building.
                     </p>
 
                     <div className="w-full h-[1px] bg-[#333333] mb-6"></div>

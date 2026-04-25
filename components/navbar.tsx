@@ -21,7 +21,7 @@ export default function Navbar() {
 
     const handleScroll = () => {
       // Very simple scroll tracking based on window position
-      const sections = ["about", "services", "technology", "risk-disclosure"];
+      const sections = ["about", "services", "technology"];
       let current = "";
 
       for (const section of sections) {
@@ -55,7 +55,6 @@ export default function Navbar() {
     { name: "About", href: "/#about", id: "about" },
     { name: "Services", href: "/#services", id: "services" },
     { name: "Technology", href: "/#technology", id: "technology" },
-    { name: "Risk Disclosure", href: "/#risk-disclosure", id: "risk-disclosure" }
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
